@@ -17,6 +17,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh 'docker build -t sample-web-app .'
+                sh 'docker tag sample-web-app $DOCKER_TAG'
             }
         }
 
