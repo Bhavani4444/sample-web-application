@@ -32,6 +32,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                sh 'docker rm -f $(docker ps -aq)'
                 sh 'docker run -d -p 80:80 bhavani4444/sample-web-app'
             }
         }
